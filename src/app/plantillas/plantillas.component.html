@@ -1,0 +1,42 @@
+<div class="error" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+  <div class="centered" *ngIf="form$ as form">
+    <form class="half-width" [formGroup]="form">
+      <div class="centerText">
+
+        <h2>Plantillas</h2>
+        <ul class="heroes">
+          <li *ngFor="let plantilla of templates" (click)="changePlantilla(plantilla)">
+            {{plantilla.nombrePlatilla}}
+            <span class="badge"> {{plantilla.nombrePlatilla}}</span>
+          </li>
+        </ul>
+        <button (click)="onSubmit(form.value)">Save</button>
+      </div>
+      <editor
+        class="centered"
+        formControlName="content"
+        [init]="{
+           base_url: '/tinymce',
+           suffix: '.min',
+           height: 500,
+           menubar: true,
+           plugins: [
+             'advlist autolink lists link image charmap print preview anchor codesample',
+             'searchreplace visualblocks code fullscreen image imagetools',
+             'insertdatetime media table paste code help wordcount pagebreak textpattern powerpaste'
+           ],
+          codesample_languages: [
+            { text: 'TypeScript', value: 'typescript' },
+            { text: 'JavaScript', value: 'javascript' },
+            { text: 'HTML/XML', value: 'markup' },
+            { text: 'CSS', value: 'css' }
+          ],
+           toolbar:
+             'pagebreak | undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image codesample',
+          pagebreak_separator: 'salto pagina'
+         }"
+      ></editor>
+    </form>
+  </div>
