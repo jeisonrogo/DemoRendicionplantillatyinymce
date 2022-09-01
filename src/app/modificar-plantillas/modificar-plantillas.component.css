@@ -1,0 +1,43 @@
+.title {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.form__container {
+  display: flex;
+}
+
+.input-text {
+  width: 250px;
+  margin-bottom: .5rem;
+  margin-right: 1rem;
+  padding: .5rem .5rem;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.input-text::placeholder {
+  color: gray;
+}
+
+.button {
+  margin-right: 1rem;
+  padding: .5rem 2rem;
+  background-color: #ec1d24;
+  border-radius: 25px;
+  color: white;
+  width: 200px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.button--secondary {
+  background-color: white;
+  color: #ec1d24;
+  border: 1px solid #ec1d24;
+  margin-top: 1rem;
+}
+
+body {
+  background-color: red;
+}

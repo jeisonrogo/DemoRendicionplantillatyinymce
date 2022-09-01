@@ -10,7 +10,7 @@ export class HttpRendicionService {
 
 
   public getRespuestaRencion(idRendicion: any){
-    return this.httpClient.get('http://localhost:8080/demo-rendicion/consultarRespuestas', {
+    return this.httpClient.get('http://192.168.10.24:8080/demoRendicionCuentas-0.0.1-SNAPSHOT/demo-rendicion/consultarRespuestas', {
       params: {
         id_rendicion: idRendicion
       }
@@ -18,15 +18,15 @@ export class HttpRendicionService {
   }
 
   public actualizacionRendion(param:any) {
-    return this.httpClient.post('http://localhost:8080/demo-rendicion/guardarRespuestas', param, {});
+    return this.httpClient.post('http://192.168.10.24:8080/demoRendicionCuentas-0.0.1-SNAPSHOT/demo-rendicion/guardarRespuestas', param, {});
   }
 
   public getPlantillasTemplate(){
-    return this.httpClient.get('http://localhost:8080/demo-rendicion/consultarTemplates', {});
+    return this.httpClient.get('http://192.168.10.24:8080/demoRendicionCuentas-0.0.1-SNAPSHOT/demo-rendicion/consultarTemplates', {});
   }
 
   public actualizarPlantilla(param:any) {
-    return this.httpClient.post('http://localhost:8080/demo-rendicion/guardar', param, {});
+    return this.httpClient.post('http://192.168.10.24:8080/demoRendicionCuentas-0.0.1-SNAPSHOT/demo-rendicion/guardar', param, {});
   }
 
 }

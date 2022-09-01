@@ -1,47 +1,55 @@
-<div class="error" *ngIf="errorMessage">
+<app-menu></app-menu>
+<div class="error " *ngIf="errorMessage">
     {{errorMessage}}
   </div>
-  <div class="centered" *ngIf="form$ as form">
-    <form class="half-width" [formGroup]="form">
-      <div class="centerText">
-        <h1>ID PLATILLA</h1>
-        <input
-          class="half-width"
-          type="text"
-          formControlName="header"
-        />
+  <div class="centered container" *ngIf="form$ as form">
+    <h1 class="title">Modificar Plantilla</h1>
+    <form class="half-width form" [formGroup]="form">
+      <div class="form__container">
+        <div class="centerText">
+          <input
+            class="half-width input-text"
+            type="text"
+            formControlName="header"
+            placeholder="Ingrese el ID de la plantillas"
+          />
+        </div>
+        <div class="centerText">
+          <!-- <button >consultar</button> -->
+          <button class="button" (click)="cargarIdPlantilla()">consultar</button>
+        </div>
       </div>
-      <div class="centerText">
-        <!-- <button >consultar</button> -->
-        <button mat-button (click)="cargarIdPlantilla()">consultar</button>
-      </div>
-      <button (click)="onSubmit(form.value)">Save</button>
       <editor
+        apiKey="56les3vorwd4skoipu21zbe8hlmokejusbwedpspbrm27lj8"
         class="centered"
         formControlName="content"
         [init]="{
-           base_url: '/tinymce',
-           suffix: '.min',
-           height: 500,
-           menubar: true,
-           plugins: [
-             'advlist autolink lists link image charmap print preview anchor codesample',
-             'searchreplace visualblocks code fullscreen image imagetools',
-             'insertdatetime media table paste code help wordcount pagebreak textpattern powerpaste'
-           ],
+          base_url: '/tinymce',
+          suffix: '.min',
+          height: 500,
+          menubar: true,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor codesample',
+            'searchreplace visualblocks code fullscreen image',
+            'insertdatetime media table code help wordcount pagebreak textpattern powerpaste'
+          ],
           codesample_languages: [
             { text: 'TypeScript', value: 'typescript' },
             { text: 'JavaScript', value: 'javascript' },
             { text: 'HTML/XML', value: 'markup' },
             { text: 'CSS', value: 'css' }
           ],
-           toolbar:
-             'pagebreak | undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image codesample',
-          pagebreak_separator: 'salto pagina'
-         }"
+          toolbar:
+            'pagebreak | undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image codesample',
+          pagebreak_separator: 'salto pagina',
+          powerpaste_allow_local_images: true,
+          powerpaste_word_import: 'prompt',
+          powerpaste_html_import: 'prompt'
+        }"
       ></editor>
       <div>
-        <div class="saveButton" (click)="onSubmit(form.value)">Save</div>
+        <!--<div class="saveButton" (click)="onSubmit(form.value)">Save</div>-->
+        <button class="button button--secondary" (click)="onSubmit(form.value)">Guardar</button>
       </div>
     </form>
   </div>

@@ -1,12 +1,13 @@
-<h3>
-
-    <a
-    routerLink="/plantillas">
-    "Editar templates plantillas"
-  </a>
-  <br>
-  <a
-  routerLink="/editar">
-  "Editar plantilla generada"
-  </a>
-</h3>
+<header class="container">
+  <a href="/"><img class="logo" [src]="image" alt="Logo Acción"></a>
+  <nav class="nav-bar">
+    <ul class="menu">
+      <li class="menu__item">
+        <a class="menu__link" routerLink="/plantillas">Editar templates plantilla</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" routerLink="/editar">Editar plantilla generadas</a>
+      </li>
+    </ul>
+  </nav>
+</header>

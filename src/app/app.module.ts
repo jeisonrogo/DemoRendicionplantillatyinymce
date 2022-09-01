@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     MenuComponent,
     PlantillasComponent,
-    ModificarPlantillasComponent
+    ModificarPlantillasComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [  { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
+  // providers: [  { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
