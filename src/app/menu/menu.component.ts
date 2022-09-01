@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public image: string | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    this.image = 'https://www.accion.co/sites/all/themes/custom/accion_fiduciaria/logo.png'
   }
 
 }

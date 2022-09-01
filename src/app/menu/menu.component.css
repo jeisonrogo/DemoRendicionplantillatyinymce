@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu__item {
+  margin-left: 2rem;
+}
+
+.menu__link {
+  color: #ec1d24;
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.active{
+  border-bottom: 2px solid #ec1d24;
+}
